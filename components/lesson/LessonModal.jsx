@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { CheckCircle, AlertCircle, PlayCircle, FileText } from 'lucide-react';
+import { CheckCircle, AlertCircle, PlayCircle, FileText, HelpCircle } from 'lucide-react';
 import Modal from '@/components/ui/Modal';
 import Button from '@/components/ui/Button';
 import styles from './LessonModal.module.css';
@@ -172,5 +172,4 @@ export default function LessonModal({ isOpen, onClose, nodeData }) {
     );
 }
 
-// Need to import HelpCircle locally to avoid circularity issues in some setups
-import { HelpCircle } from 'lucide-react';
+
