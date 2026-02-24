@@ -12,7 +12,7 @@ import ReactFlow, {
 import 'reactflow/dist/style.css';
 import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowLeft } from 'lucide-react/dist/lucide-react';
+import { ArrowLeft, ZoomIn, ZoomOut, Maximize } from 'lucide-react';
 
 import CustomNode from './CustomNode';
 import LessonModal from '../lesson/LessonModal';
