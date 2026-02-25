@@ -63,27 +63,12 @@
     position: relative;
 }
 
-.videoPlaceholder {
+.videoIframe {
     position: absolute;
     inset: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-4);
-    color: var(--text-secondary);
-    background: linear-gradient(45deg, rgba(99, 102, 241, 0.05) 0%, rgba(236, 72, 153, 0.05) 100%);
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-.videoPlaceholder:hover {
-    color: var(--text-primary);
-    background: linear-gradient(45deg, rgba(99, 102, 241, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
-}
-
-.playIcon {
-    color: var(--accent-primary);
+    width: 100%;
+    height: 100%;
+    border: none;
 }
 
 .article {
