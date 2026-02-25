@@ -23,11 +23,7 @@ export default function LessonModal({ isOpen, onClose, nodeData }) {
 
     if (!nodeData) return null;
 
-    const { title, description, type, lessonContent, quiz } = nodeData;
-
-    // Build a YouTube search URL for an embedded video
-    const youtubeSearchQuery = encodeURIComponent(`${title} tutorial`);
-    const youtubeEmbedUrl = `https://www.youtube.com/embed?listType=search&list=${youtubeSearchQuery}`;
+    const { title, description, type, lessonContent, quiz, videoId } = nodeData;
 
     const handleQuizSubmit = () => {
         setIsQuizSubmitted(true);
@@ -44,13 +40,20 @@ export default function LessonModal({ isOpen, onClose, nodeData }) {
             {description && <p className={styles.intro}>{description}</p>}
 
             <div className={styles.videoWrapper}>
-                <iframe
-                    className={styles.videoIframe}
-                    src={youtubeEmbedUrl}
-                    title={`${title} video tutorial`}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                />
+                {videoId ? (
+                    <iframe
+                        className={styles.videoIframe}
+                        src={`https://www.youtube.com/embed/${videoId}`}
+                        title={`${title} video tutorial`}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                    />
+                ) : (
+                    <div className={styles.videoFallback}>
+                        <span>🎬</span>
+                        <p>Video coming soon</p>
+                    </div>
+                )}
             </div>
 
             {lessonContent && (
